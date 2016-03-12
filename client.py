@@ -9,8 +9,8 @@ requests = BitTransferRequests(wallet, username)
 if __name__ == '__main__':
   server_url = sys.argv[1]
   key = sys.argv[2]
-  sel_url = server_url+'/press/{1}'
-  answer = requests.get(url=sel_url.format(int(pic_num), wallet.get_payout_address()), stream=True)
+  req_url = server_url+'/press/{1}'
+  answer = requests.get(url=req_url.format(int(pic_num), wallet.get_payout_address()), stream=True)
 
   if answer.status_code != 200:
     print("Could not make payment.")
